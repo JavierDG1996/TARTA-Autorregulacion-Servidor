@@ -35,7 +35,7 @@ import javax.validation.constraints.*;
 @Path("/changeTemp")
 
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaJerseyServerCodegen", date = "2020-12-06T20:20:56.477Z[GMT]")public class ChangeTempApi  {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaJerseyServerCodegen", date = "2020-12-08T10:42:14.745Z[GMT]")public class ChangeTempApi  {
    private final ChangeTempApiService delegate;
 
    public ChangeTempApi(@Context ServletConfig servletContext) {
@@ -60,7 +60,7 @@ import javax.validation.constraints.*;
    }
 
     @GET
-    
+    @Path("/{estanciaid}")
     
     @Produces({ "application/json" })
     @Operation(summary = "Devuelve si la temperatura debe ser cambiada o no", description = "Al preguntar al servidor si hay que cambiar la temperatura de una sala, este devolverá si hay que cambiarla o no", tags={ "Servidor" })
@@ -68,8 +68,9 @@ import javax.validation.constraints.*;
         @ApiResponse(responseCode = "200", description = "Devuelve la respuesta de si la temperatura debe ser cambiada", content = @Content(schema = @Schema(implementation = String.class))),
         
         @ApiResponse(responseCode = "400", description = "Error de conexión entre el controlador y el servidor") })
-    public Response changeTempGet(@Context SecurityContext securityContext)
+    public Response changeTempEstanciaidGet(@Parameter(in = ParameterIn.PATH, description = "identificador de la estancia",required=true) @PathParam("estanciaid") String estanciaid
+,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.changeTempGet(securityContext);
+        return delegate.changeTempEstanciaidGet(estanciaid,securityContext);
     }
 }

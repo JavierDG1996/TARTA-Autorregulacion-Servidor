@@ -35,7 +35,7 @@ import javax.validation.constraints.*;
 @Path("/getNewTempByGroup")
 
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaJerseyServerCodegen", date = "2020-12-06T20:20:56.477Z[GMT]")public class GetNewTempByGroupApi  {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaJerseyServerCodegen", date = "2020-12-08T10:42:14.745Z[GMT]")public class GetNewTempByGroupApi  {
    private final GetNewTempByGroupApiService delegate;
 
    public GetNewTempByGroupApi(@Context ServletConfig servletContext) {
@@ -60,7 +60,7 @@ import javax.validation.constraints.*;
    }
 
     @GET
-    
+    @Path("/{estanciaid}")
     
     @Produces({ "application/json" })
     @Operation(summary = "Devuelve la temperatura ideal a la que debe cambiar la sala en función de varios usuarios.", description = "El servidor devuelve la temperatura ideal que debe tener la sala, previamente calculada con un algoritmo, para que sea cambiada y cumpla con la satisfacción de todos los usuarios que se encuentran la sala.", tags={ "Servidor" })
@@ -68,8 +68,9 @@ import javax.validation.constraints.*;
         @ApiResponse(responseCode = "200", description = "Devuelve la temperatura ideal de la sala", content = @Content(schema = @Schema(implementation = Float.class))),
         
         @ApiResponse(responseCode = "400", description = "Error al obtener la temperatura") })
-    public Response getNewTempByGroupGet(@Context SecurityContext securityContext)
+    public Response getNewTempByGroupEstanciaidGet(@Parameter(in = ParameterIn.PATH, description = "identificador de la estancia",required=true) @PathParam("estanciaid") String estanciaid
+,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.getNewTempByGroupGet(securityContext);
+        return delegate.getNewTempByGroupEstanciaidGet(estanciaid,securityContext);
     }
 }

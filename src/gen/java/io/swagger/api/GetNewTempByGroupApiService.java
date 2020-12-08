@@ -15,6 +15,6 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaJerseyServerCodegen", date = "2020-12-06T20:20:56.477Z[GMT]")public abstract class GetNewTempByGroupApiService {
-    public abstract Response getNewTempByGroupGet(SecurityContext securityContext) throws NotFoundException;
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaJerseyServerCodegen", date = "2020-12-08T10:42:14.745Z[GMT]")public abstract class GetNewTempByGroupApiService {
+    public abstract Response getNewTempByGroupEstanciaidGet(String estanciaid,SecurityContext securityContext) throws NotFoundException;
 }
