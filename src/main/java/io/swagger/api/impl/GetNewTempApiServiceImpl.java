@@ -1,6 +1,7 @@
 package io.swagger.api.impl;
 
 import io.swagger.api.*;
+import io.swagger.api.impl.*;
 
 
 
@@ -18,7 +19,10 @@ import javax.validation.constraints.*;
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaJerseyServerCodegen", date = "2020-12-08T10:42:14.745Z[GMT]")public class GetNewTempApiServiceImpl extends GetNewTempApiService {
     @Override
     public Response getNewTempEstanciaidGet(String estanciaid, SecurityContext securityContext) throws NotFoundException {
-        // do some magic!
-        return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
+        float newTemp = server.getInstance().calcularTemp(estanciaid);
+        //Estancia e = server.getInstance().devolverEstancia(estanciaid);
+        //String response = "La nueva temperatura a modifciar será " + Float.toString(e.getNewTemp());
+        String response = "La nueva temperatura a modificar será " + Float.toString(newTemp);
+        return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, response)).build();
     }
 }
