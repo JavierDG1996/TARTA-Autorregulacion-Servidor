@@ -16,32 +16,32 @@ public class server{
         userTempList = new ArrayList<>();
         estancias = new ArrayList<>();
 
-        userTempList.add(new pairUserTempIdeal("user_001", 35));
-        userTempList.add(new pairUserTempIdeal("user_002", 36));
-        userTempList.add(new pairUserTempIdeal("user_003", 34));
-        userTempList.add(new pairUserTempIdeal("user_004", 34));
-        userTempList.add(new pairUserTempIdeal("user_005", 34));
-        userTempList.add(new pairUserTempIdeal("user_006", 36));
-        userTempList.add(new pairUserTempIdeal("user_007", 35));
+        userTempList.add(new pairUserTempIdeal("user_001", 25));
+        userTempList.add(new pairUserTempIdeal("user_002", 26));
+        userTempList.add(new pairUserTempIdeal("user_003", 24));
+        userTempList.add(new pairUserTempIdeal("user_004", 24));
+        userTempList.add(new pairUserTempIdeal("user_005", 24));
+        userTempList.add(new pairUserTempIdeal("user_006", 26));
+        userTempList.add(new pairUserTempIdeal("user_007", 25));
 
         List<String> users1 = new ArrayList<>();
         users1.add("user_001");
         users1.add("user_003");
         users1.add("user_006");
-        estancias.add(new Estancia("e_001", "no", 33, false, users1, 0));
+        estancias.add(new Estancia("e_001", "no", 23, false, users1, 0));
 
         List<String> users2 = new ArrayList<>();
         users2.add("user_002");
         users2.add("user_004");
         users2.add("user_005");
-        estancias.add(new Estancia("e_002", "no", 34, false, users2, 0));
+        estancias.add(new Estancia("e_002", "no", 24, false, users2, 0));
 
         List<String> users3 = new ArrayList<>();
         users3.add("user_007");
-        estancias.add(new Estancia("e_003", "no", 33, false, users3, 0));
+        estancias.add(new Estancia("e_003", "no", 23, false, users3, 0));
 
         List<String> users4 = new ArrayList<>();
-        estancias.add(new Estancia("e_004", "no", 34, false, users4, 0));
+        estancias.add(new Estancia("e_004", "no", 24, false, users4, 0));
     }
     
     public static server getInstance(){
