@@ -20,7 +20,7 @@ import javax.validation.constraints.*;
     public Response changeTempEstanciaidGet(String estanciaid, SecurityContext securityContext) throws NotFoundException {
        
         String response = "";
-        System.out.println("hola");
+        
         switch(server.getInstance().changeTemp(estanciaid)){
             case "yes":
             response = "Hay que cambiar la temperatura";

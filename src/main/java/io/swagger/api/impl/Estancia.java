@@ -1,7 +1,6 @@
 package io.swagger.api.impl;
 
 import java.util.List;
-import java.util.ArrayList;
 
 public class Estancia {
     private String id;

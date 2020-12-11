@@ -39,6 +39,9 @@ public class server{
         List<String> users3 = new ArrayList<>();
         users3.add("user_007");
         estancias.add(new Estancia("e_003", "no", 33, false, users3, 0));
+
+        List<String> users4 = new ArrayList<>();
+        estancias.add(new Estancia("e_004", "no", 34, false, users4, 0));
     }
     
     public static server getInstance(){
@@ -52,7 +55,7 @@ public class server{
         boolean flag = false;
 
         for (int i = 0; i < estancias.size() && !flag; i++) {
-            if(estancias.get(i).getId() == e.getId()){
+            if(estancias.get(i).getId().equals(e.getId())){
                 estancias.remove(i);
                 estancias.add(e);
                 flag=true;
@@ -65,7 +68,7 @@ public class server{
         boolean flag = false;
 
         for (int i = 0; i < estancias.size() && !flag; i++) {
-            if(estancias.get(i).getId() == id){
+            if(estancias.get(i).getId().equals(id)){
                 e = estancias.get(i);
                 flag=true;
             }
@@ -81,7 +84,7 @@ public class server{
 
         if(e != null){
 
-            if (e.getUsers().size() == 0){
+            if (e.getUsers().size() != 0){
                 res = "yes";
             }else{
                 res = "no";
@@ -126,7 +129,7 @@ public class server{
 
         
         for (int i = 0; i < userTempList.size()&&!flag;i++) {
-            if(userTempList.get(i).getUser()==e.getUsers().get(0)){
+            if(userTempList.get(i).getUser().equals(e.getUsers().get(0))){
                     newTemp = userTempList.get(i).getTempIdeal();
                     flag = true;
             }
@@ -157,7 +160,7 @@ public class server{
 
             boolean flag2=false;
             for(int j =0; j<e.getUsers().size()&&!flag2;j++){
-                if(userTempList.get(i).getUser()==e.getUsers().get(j)){
+                if(userTempList.get(i).getUser().equals(e.getUsers().get(j))){
                     res = res + userTempList.get(i).getTempIdeal();
                     cont++;
                     flag2 = true;

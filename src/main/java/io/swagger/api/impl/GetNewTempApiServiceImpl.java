@@ -20,8 +20,6 @@ import javax.validation.constraints.*;
     @Override
     public Response getNewTempEstanciaidGet(String estanciaid, SecurityContext securityContext) throws NotFoundException {
         float newTemp = server.getInstance().calcularTemp(estanciaid);
-        //Estancia e = server.getInstance().devolverEstancia(estanciaid);
-        //String response = "La nueva temperatura a modifciar será " + Float.toString(e.getNewTemp());
         String response = "La nueva temperatura a modificar será " + Float.toString(newTemp);
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, response)).build();
     }
